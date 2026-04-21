@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>باريس للفواكة والخضروات</title>
+  <meta name="description" content="حصاد الطبيعة - متجر احترافي للخضار والمنتجات العضوية الطازجة. جودة عالية، توصيل سريع، وأسعار منافسة.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- شريط التنقل العلوي -->
+  <nav class="navbar" id="navbar">
+    <div class="container nav-container">
+      <a href="#home" class="logo">
+        <span class="logo-icon"><i class="fa-solid fa-seedling"></i></span>
+        <span>باريس للفواكة والخضروات</span>
+      </a>
+      
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home">الرئيسية</a></li>
+        <li><a href="#about">من نحن</a></li>
+        <li><a href="#products">المنتجات</a></li>
+        <li><a href="#reviews">آراء العملاء</a></li>
+        <li><a href="#contact">تواصل معنا</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button class="cart-toggle" id="cartToggle" title="سلة التسوق">
+          <i class="fa-solid fa-shopping-basket"></i>
+          <span class="cart-count" id="cartCount">0</span>
+        </button>
+        <button class="menu-toggle" id="menuToggle" aria-label="فتح القائمة">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- قسم البطل (Hero Section) -->
+  <header class="hero" id="home">
+    <video class="hero-video" autoplay muted loop playsinline>
+      <!-- فيديو خلفية عالي الجودة للفواكه الطازجة -->
+      <source src="assets/videos/hero-bg.mp4" type="video/mp4">
+      متصفحك لا يدعم تشغيل الفيديو.
+    </video>
+    <div class="hero-overlay"></div>
+    <div class="hero-content reveal">
+      <p class="eyebrow">طبيعي 100% - مباشر من المزرعة</p>
+      <h1>فواكه وخضار عضوية طازجة<br>تصلك أينما كنت</h1>
+      <p>
+        في <strong>حصاد الطبيعة</strong>، نقدم لك أجود أنواع الفواكه والخضروات المنتقاة بعناية فائقة لضمان صحتك وصحة عائلتك.
+      </p>
+      <div class="hero-actions">
+        <a href="#products" class="btn">ابدأ التسوق</a>
+        <a href="#about" class="btn btn-outline">اكتشف قصتنا</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- قسم من نحن (About Us) -->
+    <section class="section about reveal" id="about">
+      <div class="container">
+        <div class="section-head">
+          <h2>من نحن</h2>
+          <p>جودتنا هي سر تميزنا في عالم الزراعة العضوية</p>
+        </div>
+        <div class="about-grid">
+          <div class="about-text">
+            <h3>قصة حصاد الطبيعة</h3>
+            <p>بدأنا بشغف نحو توفير غذاء صحي وخالٍ من المواد الكيميائية. نحن نؤمن بأن الطبيعة تمنحنا الأفضل، ومهمتنا هي إيصال هذا الخير إلى مائدتك بأعلى معايير الجودة.</p>
+            <div class="contact-info-mini">
+              <p><i class="fa-solid fa-location-dot"></i> العنوان: اليمن, صنعاء</p>
+              <p><i class="fa-solid fa-phone"></i> هاتف:777  062 772    </p>
+            </div>
+          </div>
+          <div class="about-image">
+            <img src="https://images.pexels.com/photos/2255935/pexels-photo-2255935.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="مزرعة حصاد الطبيعة">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- قسم المنتجات (Products) -->
+    <section class="section products reveal" id="products">
+      <div class="container">
+        <div class="section-head">
+          <h2>منتجاتنا الطازجة</h2>
+          <p>اختر ما يناسبك من تشكيلتنا المختارة بعناية</p>
+        </div>
+
+        <!-- عناصر البحث والفلترة -->
+        <div class="search-filter-section">
+          <div class="search-box">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" id="searchInput" placeholder="ابحث عن منتج...">
+          </div>
+          
+          <div class="filter-controls">
+            <div class="filter-group">
+              <label for="categoryFilter">الفئة:</label>
+              <select id="categoryFilter">
+                <option value="all">جميع الفئات</option>
+                <option value="فواكه">فواكه</option>
+                <option value="خضروات">خضروات</option>
+              </select>
+            </div>
+
+            <div class="filter-group">
+              <label for="priceMin">السعر من:</label>
+              <input type="number" id="priceMin" min="0" max="100" value="0" placeholder="0">
+            </div>
+
+            <div class="filter-group">
+              <label for="priceMax">إلى:</label>
+              <input type="number" id="priceMax" min="0" max="100" value="100" placeholder="100">
+            </div>
+          </div>
+        </div>
+
+        <div class="product-grid" id="productGrid">
+          <!-- سيتم توليد المنتجات بواسطة JavaScript -->
+        </div>
+      </div>
+    </section>
+
+    <!-- قسم آراء العملاء (Customer Reviews) -->
+    <section class="section reviews reveal" id="reviews">
+      <div class="container">
+        <div class="section-head">
+          <h2>ماذا يقول عملاؤنا؟</h2>
+          <p>ثقتكم هي دافعنا للاستمرار والتميز</p>
+        </div>
+        <div class="reviews-grid">
+          <div class="review-card">
+            <img src="assets/images/12.jpg" alt="مجيب محمد">
+            <h3>مجيب محمد</h3>
+            <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+            <p>"جودة الفواكه والخضار رائعة جداً، التوصيل كان سريعاً والتعامل في منتهى الرقي. أنصح الجميع بالتعامل معهم."</p>
+            <span class="verified"><i class="fa-solid fa-circle-check"></i> عميل موثق</span>
+          </div>
+          <div class="review-card">
+            <img src="https://i.pravatar.cc/150?u=2" alt="سارة العتيبي">
+            <h3>سارة العتيبي</h3>
+            <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+            <p>"أفضل متجر فواكه وخضار جربته في الرياض. المنتجات تأتي طازجة وكأنها قطفت للتو من المزرعة."</p>
+            <span class="verified"><i class="fa-solid fa-circle-check"></i> عميل موثق</span>
+          </div>
+          <div class="review-card">
+            <img src="https://i.pravatar.cc/150?u=3" alt="خالد الشمري">
+            <h3>خالد الشمري</h3>
+            <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i></div>
+            <p>"تجربة شراء سهلة وسلسة. سلة التسوق ذكية جداً والأسعار مناسبة جداً مقارنة بالجودة."</p>
+            <span class="verified"><i class="fa-solid fa-circle-check"></i> عميل موثق</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- قسم تواصل معنا (Contact Us) -->
+    <section class="section contact reveal" id="contact">
+      <div class="container">
+        <div class="section-head">
+          <h2>تواصل معنا</h2>
+          <p>نحن هنا للإجابة على جميع استفساراتكم</p>
+        </div>
+        <div class="contact-grid">
+          <form class="contact-form" id="contactForm">
+            <div class="form-group">
+              <label for="c_name">الاسم الكامل</label>
+              <input type="text" id="c_name" placeholder="أدخل اسمك" required>
+            </div>
+            <div class="form-group">
+              <label for="c_email">البريد الإلكتروني</label>
+              <input type="email" id="c_email" placeholder="example@mail.com" required>
+            </div>
+            <div class="form-group">
+              <label for="c_message">رسالتك</label>
+              <textarea id="c_message" rows="5" placeholder="كيف يمكننا مساعدتك؟" required></textarea>
+            </div>
+            <button type="submit" class="btn">إرسال الرسالة</button>
+          </form>
+          <div class="contact-sidebar">
+            <div class="map-placeholder">
+              <h3>موقعنا على الخريطة</h3>
+              <div class="map-box">
+                <i class="fa-solid fa-map-location-dot"></i>
+                <span>خريطة تفاعلية (قريباً)</span>
+              </div>
+            </div>
+            <div class="social-links">
+              <h3>تابعنا على</h3>
+              <div class="social-icons">
+                <a href="#" class="social-icon whatsapp"><i class="fa-brands fa-whatsapp"></i></a>
+                <a href="#" class="social-icon instagram"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" class="social-icon twitter"><i class="fa-brands fa-x-twitter"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- سلة التسوق (Sidebar Cart) -->
+  <aside class="cart-sidebar" id="cartSidebar">
+    <div class="cart-header">
+      <h3>سلة التسوق</h3>
+      <button class="close-cart" id="closeCart"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    <div class="cart-items" id="cartItems">
+      <!-- العناصر المضافة ستظهر هنا -->
+      <div class="empty-cart-container">
+        <div class="empty-cart-icon">
+          <i class="fa-solid fa-shopping-basket"></i>
+        </div>
+        <p class="empty-cart-msg">سلتك فارغة حالياً</p>
+        <p class="empty-cart-subtitle">ابدأ بإضافة منتجات طازجة من متجرنا</p>
+      </div>
+    </div>
+    <div class="cart-footer">
+      <div class="cart-total">
+        <span>الإجمالي:</span>
+        <span id="cartTotalPrice">0.00</span> ر.س
+      </div>
+      <button class="btn btn-block btn-checkout" id="checkoutBtn">إتمام الشراء</button>
+    </div>
+  </aside>
+
+  <!-- نافذة المواصفات (Product Spec Modal) -->
+  <div class="modal" id="specModal">
+    <div class="modal-content">
+      <h3 id="modalTitle">تحديد المواصفات</h3>
+      <div class="form-group">
+        <label for="productWeight">الوزن / الكمية (كجم)</label>
+        <input type="number" id="productWeight" min="1" step="0.5" placeholder="مثال: 1">
+      </div>
+      <div class="modal-actions">
+        <button class="btn" id="confirmAdd">إضافة للسلة</button>
+        <button class="btn btn-outline" id="cancelAdd">إلغاء</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- صفحة الدفع (Checkout Page - Hidden by default) -->
+  <div class="checkout-overlay" id="checkoutPage">
+    <div class="checkout-container">
+      <button class="close-checkout" id="closeCheckout"><i class="fa-solid fa-arrow-right"></i> العودة للمتجر</button>
+      <h2>إتمام عملية الشراء</h2>
+      <div class="checkout-grid">
+        <form id="paymentForm">
+          <div class="form-section">
+            <h3>بيانات الشحن</h3>
+            <div class="form-group">
+              <input type="text" id="ship_name" placeholder="الاسم الكامل" required>
+            </div>
+            <div class="form-group">
+              <input type="text" id="ship_address" placeholder="عنوان الشحن بالتفصيل" required>
+            </div>
+            <div class="form-group">
+              <input type="tel" id="ship_phone" placeholder="رقم الجوال" required>
+            </div>
+          </div>
+          <div class="form-section">
+            <h3>بيانات الدفع</h3>
+            <div class="payment-icons">
+              <i class="fa-brands fa-cc-visa visa"></i>
+              <i class="fa-brands fa-cc-mastercard mastercard"></i>
+              <i class="fa-brands fa-cc-apple-pay apple-pay"></i>
+            </div>
+            <div class="form-group">
+              <input type="text" id="card_number" placeholder="رقم البطاقة" required maxlength="16">
+            </div>
+            <div class="form-row">
+              <input type="text" id="card_expiry" placeholder="MM/YY" required maxlength="5">
+              <input type="text" id="card_cvv" placeholder="CVV" required maxlength="3">
+            </div>
+          </div>
+          <button type="submit" class="btn btn-block btn-checkout">تأكيد الدفع</button>
+        </form>
+        <div class="order-summary">
+          <h3>ملخص الطلب</h3>
+          <div id="orderSummaryItems"></div>
+          <hr>
+          <div class="summary-total">
+            <span>الإجمالي النهائي:</span>
+            <span id="summaryTotal">0.00</span> ر.س
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- زر العودة لأعلى -->
+  <button id="backToTop" class="back-to-top" aria-label="العودة للأعلى">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2026 متجر باريس. جميع الحقوق محفوظة.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
